@@ -128,7 +128,7 @@ pip install -e ".[dev]"
 #### Option A: Databricks CLI (Recommended)
 
 ```bash
-databricks configure
+databricks configure --profile DBX_FREE
 ```
 
 You'll be prompted for:
