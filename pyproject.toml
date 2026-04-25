@@ -1,10 +1,9 @@
 [project]
 name = "utils"
 version = "0.0.1"
-authors = [{ name = "Malvik Vaghadia" }]
-requires-python = ">=3.10,<3.13"
+authors = [{ name = "SaiKiran Ponnada" }]
+requires-python = ">=3.10"
 dependencies = [
-    "databricks-sql-connector>=4.2.4",
     # Any dependencies for jobs and pipelines in this project can be added here
     # See also https://docs.databricks.com/dev-tools/bundles/library-dependencies
     #
@@ -13,13 +12,16 @@ dependencies = [
     "streamlit>=1.53.1",
 ]
 
-[dependency-groups]
+[project.optional-dependencies]
 dev = [
     "pytest",
     "ruff",
-    "databricks-dlt",
-    "databricks-connect>=15.4,<15.5",
+    # "databricks-dlt",  # Temporarily disabled due to thrift dependency issues
+    # "databricks-connect>=15.4,<15.5",  # Temporarily disabled due to thrift dependency issues
     "ipykernel",
+]
+databricks = [
+    "databricks-sql-connector>=4.2.4",
 ]
 
 [project.scripts]
